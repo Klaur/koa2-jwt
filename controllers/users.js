@@ -7,6 +7,7 @@ module.exports = {
       username: { type: 'string', required: true },
       password: { type: 'string', required: true }
     })
+    console.log(ctx.request.body)
     const user = await Users.findOne(ctx.request.body)
     if (user) {
       const { _id, username } = user
